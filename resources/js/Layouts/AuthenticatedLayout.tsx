@@ -7,6 +7,7 @@ import { Link } from '@inertiajs/react';
 import { User } from '@/types';
 
 export default function Authenticated({ user, header, children }: PropsWithChildren<{ user: User, header?: ReactNode }>) {
+
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
     return (
@@ -56,7 +57,9 @@ export default function Authenticated({ user, header, children }: PropsWithChild
                                     </Dropdown.Trigger>
 
                                     <Dropdown.Content>
-                                        <Dropdown.Link href={route('profile.edit')}>Profile</Dropdown.Link>
+                                        <Dropdown.Link href={route('profile.edit')}>
+                                            Profile
+                                        </Dropdown.Link>
                                         <Dropdown.Link href={route('logout')} method="post" as="button">
                                             Log Out
                                         </Dropdown.Link>
@@ -103,11 +106,15 @@ export default function Authenticated({ user, header, children }: PropsWithChild
                             <div className="font-medium text-base text-gray-800">
                                 {user.name}
                             </div>
-                            <div className="font-medium text-sm text-gray-500">{user.email}</div>
+                            <div className="font-medium text-sm text-gray-500">
+                                {user.email}
+                            </div>
                         </div>
 
                         <div className="mt-3 space-y-1">
-                            <ResponsiveNavLink href={route('profile.edit')}>Profile</ResponsiveNavLink>
+                            <ResponsiveNavLink href={route('profile.edit')}>
+                                Profile
+                            </ResponsiveNavLink>
                             <ResponsiveNavLink method="post" href={route('logout')} as="button">
                                 Log Out
                             </ResponsiveNavLink>
@@ -118,11 +125,15 @@ export default function Authenticated({ user, header, children }: PropsWithChild
 
             {header && (
                 <header className="bg-white shadow">
-                    <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">{header}</div>
+                    <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {header}
+                    </div>
                 </header>
             )}
 
-            <main>{children}</main>
+            <main>
+                {children}
+            </main>
         </div>
     );
 }
