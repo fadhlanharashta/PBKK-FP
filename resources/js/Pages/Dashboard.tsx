@@ -15,7 +15,7 @@ export default function Dashboard({ auth }: PageProps) {
             <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-6xl text-gray-900 text-center">
+                        <div className="p-6 mt-9 md:text-6xl text-gray-900 text-center font-bold tracking-widest">
                             Welcome, User
                         </div>
                     </div>
